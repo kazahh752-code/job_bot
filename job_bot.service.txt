@@ -1,0 +1,15 @@
+[Unit]
+Description=Job Tracker Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/job_bot
+EnvironmentFile=/home/ubuntu/job_bot/.env
+ExecStart=/home/ubuntu/job_bot/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
